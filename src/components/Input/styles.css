@@ -1,0 +1,35 @@
+.input {
+  display: flex;
+  flex: 1;
+
+  flex-direction: column;
+
+  margin-bottom: 8px;
+}
+
+.input input {
+  padding: 8px;
+
+  border-radius: 4px;
+
+  outline: none;
+
+  background: #f3f3f3;
+
+  border: 1px solid #87bafd;
+}
+
+.input input:focus {
+  border: 1px solid #0a69e4;
+}
+
+.input input:disabled {
+  background: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.input span {
+  margin-top: 2px;
+  color: #fa5757;
+  font-size: 12px;
+}

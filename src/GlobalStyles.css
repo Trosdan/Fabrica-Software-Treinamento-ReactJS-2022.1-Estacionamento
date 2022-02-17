@@ -1,0 +1,39 @@
+body {
+  background: #e2e2e2;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+
+  margin: 0;
+}
+
+.App {
+  background: white;
+  width: 700px;
+  padding: 16px;
+}
+
+table {
+  width: 650px;
+}
+
+table thead th {
+  text-align: start;
+}
+
+.listar-informacoes {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.item-button {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #000;
+}

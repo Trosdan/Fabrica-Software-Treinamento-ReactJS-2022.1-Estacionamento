@@ -1,0 +1,28 @@
+.menu {
+  display: flex;
+  flex: 1;
+}
+
+.menu a {
+  color: black;
+  text-decoration: none;
+  margin: 8px;
+  padding: 8px;
+}
+
+.menu a:hover {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.menu .novo-veiculo {
+  background: #0a69e4;
+  color: white;
+  border-radius: 4px;
+
+  margin-left: auto;
+}
+
+.menu .novo-veiculo:hover {
+  background: #074ba5;
+}
