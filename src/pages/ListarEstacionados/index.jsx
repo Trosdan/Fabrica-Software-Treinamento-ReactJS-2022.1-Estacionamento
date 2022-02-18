@@ -1,36 +1,13 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 
 import { EstacionadoItem } from '../../components/EstacionadoItem';
+import { getEstacionado } from '../../services/api/estacionadosService';
 
 function ListarEstacionados() {
-  const [estacionados, setEstacionados] = useState([
-    {
-      date_entrada: new Date(),
-      data_saida: null,
-      veiculo__nome_cliente: "Jordan Oliveira",
-      veiculo__placa: "DWS-2313",
-      veiculo: 1,
-    },
-    {
-      date_entrada: new Date(),
-      data_saida: null,
-      veiculo__nome_cliente: "Jordan Oliveira",
-      veiculo__placa: "DWS-2313",
-      veiculo: 2,
-    }
-  ]);
+  const [estacionados, setEstacionados] = useState([]);
 
   useEffect(() => {
-    const headers = {
-      "Content-Type": 'application/json',
-      origin: "¨*",
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With",
-    }
-
-    axios.get('http://167.71.171.58/estacionamento_veiculos', { headers, method: 'GET' });
+    getEstacionado().then(res => setEstacionados(res));
   }, [])
   
   return (
@@ -51,7 +28,8 @@ function ListarEstacionados() {
                 key={estacionado.veiculo}
                 veiculoNomeCliente={estacionado.veiculo__nome_cliente}
                 veiculoPlaca={estacionado.veiculo__placa}
-                dataEntrada={estacionado.date_entrada}
+                dataEntrada={estacionado.data_entrada}
+                dataSaida={estacionado.data_saida}
               />
             )
           })}

@@ -18,7 +18,7 @@ function App() {
         <Route path="/veiculo" element={<ListarVeiculos />} />
         <Route path="/estacionamento" element={<ListarEstacionamentos />} />
         <Route path="/veiculo/cadastro" element={<FormVeiculo />} />
-        <Route path="/veiculo/:id/estacionamento/registro" element={<FormEstacionamento />} />
+        <Route path="/veiculo/:idVeiculo/estacionamento/:idEstacionamento" element={<FormEstacionamento />} />
       </Routes>
     </div>
   );

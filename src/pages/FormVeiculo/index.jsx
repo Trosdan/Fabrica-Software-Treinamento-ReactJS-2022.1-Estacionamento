@@ -1,13 +1,29 @@
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+
+import { postVeiculo } from '../../services/api/veiculoService';
 
 import { Input } from '../../components/Input';
 
 function FormVeiculo() {
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const navigation = useNavigate();
 
-  function enviarFormulario(data) {
-    console.log({ data });
+  async function enviarFormulario(data) {
+    navigation('/veiculo');
+    // try {
+    //   await postVeiculo({
+    //     nome_cliente: data.nome,
+    //     modelo_carro: data.modelo,
+    //     placa: data.placa,
+    //     cor: data.cor
+    //   });
+    // } catch (e) {
+    //   alert('Não possivel cadastrar o veiculo');
+    // }
   }
+
+  console.log({errors})
 
   return (
     <div>
@@ -21,19 +37,19 @@ function FormVeiculo() {
         
         <Input 
           label="Modelo"
-          ragister={register('nome', { required: true })}
+          register={register('modelo', { required: true })}
           error={errors.modelo}
         />
         
         <Input 
           label="Placa"
-          ragister={register('placa', { required: true })}
+          register={register('placa', { required: true })}
           error={errors.placa}
         />
         
         <Input 
           label="Cor"
-          ragister={register('cor', { required: true })}
+          register={register('cor', { required: true })}
           error={errors.cor}
         />
         <button>ENVIAR</button>
