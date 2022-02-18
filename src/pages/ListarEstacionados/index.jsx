@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import { EstacionadoItem } from '../../components/EstacionadoItem';
 
@@ -19,6 +20,18 @@ function ListarEstacionados() {
       veiculo: 2,
     }
   ]);
+
+  useEffect(() => {
+    const headers = {
+      "Content-Type": 'application/json',
+      origin: "¨*",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With",
+    }
+
+    axios.get('http://167.71.171.58/estacionamento_veiculos', { headers, method: 'GET' });
+  }, [])
   
   return (
     <div className='listar-informacoes'>

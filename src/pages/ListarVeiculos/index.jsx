@@ -1,21 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 import { VeiculoItem } from '../../components/VeiculoItem';
+import { getVeiculos } from '../../services/api/veiculoService';
 
 function ListarVeiculos() {
-  const [veiculos, setVeiculos] = useState([
-    {
-      id: 1,
-      nome_cliente: "Jordan Oliveira",
-      modelo_carro: "teste",
-      placa: "SWD-3213"
-    },
-    {
-      id: 2,
-      nome_cliente: "Jordan Oliveira",
-      modelo_carro: "teste",
-      placa: "SWD-3213"
-    },
-  ]);
+  const [veiculos, setVeiculos] = useState([]);
+
+  async function loadVeiculos() {
+    try {
+      const data = await getVeiculos();
+      setVeiculos(data);
+    } catch (e) {
+      alert('Não foi possivel carregar os dados.');
+    }
+  }
+
+  useEffect(() => {
+    loadVeiculos();
+  }, []);
 
   return (
     <div className="listar-informacoes" >
