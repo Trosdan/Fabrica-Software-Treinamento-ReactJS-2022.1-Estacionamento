@@ -1,0 +1,45 @@
+{
+  "veiculos": [
+    {
+      "id": 1,
+      "nome_cliente": "Jordan Oliveira",
+      "modelo_carro": "Ford",
+      "placa": "DWQ-2312",
+      "cor": "Vermelho"
+    },
+    {
+      "id": 2,
+      "nome_cliente": "Rodrigo Alves",
+      "modelo_carro": "Audi",
+      "placa": "SWQ-3312",
+      "cor": "Preto"
+    },
+    {
+      "id": 3,
+      "nome_cliente": "Fernanda Rodrigues",
+      "modelo_carro": "Nissa",
+      "placa": "FSD-1323",
+      "cor": "Preto"
+    }
+  ],
+  "estacionamento": [
+    {
+      "id": 1,
+      "data_entrada": "2022-02-17T22:34:00.706837",
+      "data_saida": "2022-02-17T22:43:38",
+      "veiculo": 1
+    },
+    {
+      "id": 2,
+      "data_entrada": "2022-02-17T22:34:00.706837",
+      "data_saida": null,
+      "veiculo": 2
+    },
+    {
+      "id": 3,
+      "data_entrada": "2022-02-17T22:34:00.706837",
+      "data_saida": null,
+      "veiculo": 2
+    }
+  ]
+}
